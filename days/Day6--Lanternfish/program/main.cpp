@@ -29,11 +29,8 @@ class Lanternfish {
 
             for(auto i = days; i > 0; --i){
                 lli firstIndex = counts[0];
-                for (int index = 1; index < 9; index++) {
-                    counts[index - 1] = counts[index];
-                }
+                std::rotate(counts.begin(), counts.begin() + 1, counts.end());
                 counts[6] += firstIndex;
-                counts[8] = firstIndex;
             }
             lli base = 0;
             return std::accumulate(counts.begin(), counts.end(), base);
