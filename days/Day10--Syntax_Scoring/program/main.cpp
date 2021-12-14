@@ -39,7 +39,6 @@ public:
            
             bool incorrectFirst = false;
             for (char& c : line) {
-                
                 if (c == '[') {
                     expected.push_back(']');
                 }
@@ -60,8 +59,6 @@ public:
                     incorrectFirst = true;
                     break;
                 }
-                if (incorrectFirst) continue;
-                //{']', 57}, { '}', 1197 }, { '>', 25137 }, { ')', 3 }
             }
         }
         return points;
